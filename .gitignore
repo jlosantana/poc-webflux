@@ -1,0 +1,7 @@
+target/classes/application.properties
+target/classes/com/apirest/webflux/WebfluxApplication.class
+target/classes/com/apirest/webflux/controller/ProductController.class
+target/classes/com/apirest/webflux/data/Product.class
+target/classes/com/apirest/webflux/repository/ProductRepository.class
+target/classes/com/apirest/webflux/service/ProductService.class
+target/test-classes/com/apirest/webflux/WebfluxApplicationTests.class
