@@ -24,4 +24,11 @@ public class ProductHandler {
                 .body(BodyInserters.fromPublisher(product.flatMap(productService::save), Product.class));
 
     }
+
+    public Mono<ServerResponse> getAllProducts(ServerRequest request) {
+        return ServerResponse.ok()
+          .contentType(MediaType.APPLICATION_JSON)
+          .body(productService.getAllProducts(), Product.class);
+    }
+
 }
