@@ -1,7 +1,6 @@
 package com.apirest.webflux.functional;
 
-import static org.springframework.web.reactive.function.server.RequestPredicates.POST;
-import static org.springframework.web.reactive.function.server.RequestPredicates.GET;
+import static org.springframework.web.reactive.function.server.RequestPredicates.*;
 import static org.springframework.web.reactive.function.server.RequestPredicates.accept;
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
 
@@ -17,6 +16,8 @@ public class ProductFunctionalConfiguration {
     @Bean
     public RouterFunction<ServerResponse> createRoutes(ProductHandler productHandler) {
         return route(POST("/functional/products").and(accept(MediaType.APPLICATION_JSON)), productHandler::save)
-        .andRoute(GET("/functional/products").and(accept(MediaType.APPLICATION_JSON)), productHandler::getAllProducts);
+        .andRoute(GET("/functional/products").and(accept(MediaType.APPLICATION_JSON)), productHandler::getAllProducts)
+        .andRoute(GET("/functional/products/{id}").and(accept(MediaType.APPLICATION_JSON)), productHandler::getById)
+        .andRoute(DELETE("/functional/products/{id}").and(accept(MediaType.APPLICATION_JSON)), productHandler::deleteById);
     }
 }
