@@ -17,12 +17,12 @@ mvn spring-boot:run
 #### 3. NOT Funcional endpoint
 
 ```
-url --location --request POST 'http://localhost:8080/products' --header 'Content-Type: application/json' --data-raw '{"name": "Not Functional Product 1"}'
+curl --location --request POST 'http://localhost:8080/products' --header 'Content-Type: application/json' --data-raw '{"name": "Not Functional Product 1"}'
 ```
 
 #### 4. Functional endpoint
 
 ```
-url --location --request POST 'http://localhost:8080/functional/products' --header 'Content-Type: application/json' --data-raw '{"name": "Functional Product 1"}'
+curl --location --request POST 'http://localhost:8080/functional/products' --header 'Content-Type: application/json' --data-raw '{"name": "Functional Product 1"}'
 ```
 
